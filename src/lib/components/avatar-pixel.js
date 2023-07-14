@@ -37,7 +37,7 @@ const AvatarPixel = (props) => {
         width={SIZE}
         height={SIZE}
       >
-        <rect width={SIZE} height={SIZE} rx={props.square ? undefined : SIZE * 2} fill="#FFFFFF" />
+        <rect width={SIZE} height={SIZE} rx={props.rounded ? 5 : props.square ? undefined : SIZE * 2} fill="#FFFFFF" />
       </mask>
       <g mask="url(#mask__pixel)">
         <rect width={10} height={10} fill={pixelColors[0]} />

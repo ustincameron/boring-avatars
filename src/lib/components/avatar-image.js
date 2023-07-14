@@ -2,7 +2,7 @@ import * as React from 'react';
 
 const AvatarImage = (props) => {
   const styles = {
-    borderRadius: props.square ? 'inherit' : '50%',
+    borderRadius: props.rounded ? '25%' : props.square ? 'inherit' : '50%',
   };
   return (
     <img

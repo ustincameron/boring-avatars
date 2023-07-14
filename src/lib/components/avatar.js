@@ -17,11 +17,12 @@ const Avatar = ({
   name = 'Clara Barton',
   src = '',
   square = false,
+                  rounded = false,
   title = false,
   size = 40,
   ...props
 }) => {
-  const avatarProps = { colors, name, title, size, square, src, ...props };
+  const avatarProps = { colors, name, title, size, square, rounded, src, ...props };
   const checkedVariant = () => {
     if (Object.keys(deprecatedVariants).includes(variant)) {
       return deprecatedVariants[variant];
