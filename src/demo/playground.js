@@ -70,7 +70,7 @@ const Input = styled.input`
   }
 `;
 
-const AvatarWrapper = ({ name, playgroundColors, size, square, variant, src }) => {
+const AvatarWrapper = ({ name, playgroundColors, size, square, rounded, variant, src }) => {
   const [avatarName, setAvatarName] = useState(name);
   const handleFocus = (event) => event.target.select();
   const ref = useRef();
@@ -96,6 +96,7 @@ const AvatarWrapper = ({ name, playgroundColors, size, square, variant, src }) =
           size={size}
           variant={variants[variant]}
           square={square}
+          rounded={rounded}
           src={src}
         />
       </AvatarSection>
@@ -191,6 +192,7 @@ const Playground = () => {
   const [variant, setVariant] = useState(variants.beam);
   const [imageSrc, setImageSrc] = useState(imageExamples.screenshot);
   const [isSquare, setSquare] = useState(false);
+  const [isRounded, setRounded] = useState(false);
 
   return (
     <>
@@ -230,7 +232,9 @@ const Playground = () => {
         </ColorsSection>
 
         <Button onClick={() => handleRandomColors()}>Random palette</Button>
-        <Button onClick={() => setSquare(!isSquare)}>{isSquare ? 'Round' : 'Square'}</Button>
+        <Button onClick={() => setSquare(false)}>{'Round?'}</Button>
+        <Button onClick={() => setSquare(true)}>{'Square?'}</Button>
+        <Button onClick={() => setRounded(true)}>{'Rounded?'}</Button>
         <SegmentGroup>
           {Object.entries(avatarSizes).map(([key, value], index) => (
             <SizeDot
@@ -248,6 +252,7 @@ const Playground = () => {
             key={name}
             size={avatarSize}
             square={isSquare}
+            rounded={isRounded}
             name={exampleName}
             playgroundColors={filteredColors}
             variant={variant}

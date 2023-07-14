@@ -38,6 +38,7 @@ import Avatar from "boring-avatars";
 |---------|---------------------------------------------------------------------------------|
 | size    | number or string, `40px` (default)                                              |
 | square  | boolean: `false` (default)                                                      |
+| rounded | boolean: `false` (default)                                                      |
 | title   | boolean: `false` (default)                                                      |
 | name    | string                                                                          |
 | variant | oneOf: `marble` (default), `beam`, `pixel`,`sunset`, `ring`, `bauhaus`, `image` |

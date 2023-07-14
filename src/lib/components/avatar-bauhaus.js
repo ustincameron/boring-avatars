@@ -33,7 +33,7 @@ const AvatarBauhaus = (props) => {
     >
       {props.title && <title>{props.name}</title>}
       <mask id="mask__bauhaus" maskUnits="userSpaceOnUse" x={0} y={0} width={SIZE} height={SIZE}>
-        <rect width={SIZE} height={SIZE} rx={props.square ? undefined : SIZE * 2} fill="#FFFFFF" />
+        <rect width={SIZE} height={SIZE} rx={props.rounded ? 5 : props.square ? undefined : SIZE * 2} fill="#FFFFFF" />
       </mask>
       <g mask="url(#mask__bauhaus)">
         <rect width={SIZE} height={SIZE} fill={properties[0].color} />

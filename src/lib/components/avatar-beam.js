@@ -36,7 +36,6 @@ function generateData(name, colors) {
 
 const AvatarBeam = (props) => {
   const data = generateData(props.name, props.colors);
-
   return (
     <svg
       viewBox={'0 0 ' + SIZE + ' ' + SIZE}
@@ -48,7 +47,7 @@ const AvatarBeam = (props) => {
     >
       {props.title && <title>{props.name}</title>}
       <mask id="mask__beam" maskUnits="userSpaceOnUse" x={0} y={0} width={SIZE} height={SIZE}>
-        <rect width={SIZE} height={SIZE} rx={props.square ? undefined : SIZE * 2} fill="#FFFFFF" />
+        <rect width={SIZE} height={SIZE} rx={props.rounded ? 5 : props.square ? undefined : SIZE * 2} fill="#FFFFFF" />
       </mask>
       <g mask="url(#mask__beam)">
         <rect width={SIZE} height={SIZE} fill={data.backgroundColor} />
